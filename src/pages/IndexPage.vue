@@ -57,13 +57,26 @@
         </q-card>
       </div>
     </div>
+
+    <div class="row q-gutter-y-md q-mt-md">
+      <div class="col-12 col-md-6 q-px-xs">
+        <LineChart></LineChart>
+      </div>
+
+      <div class="col-12 col-md-6 q-px-xs">
+        <DonutChart></DonutChart>
+      </div>
+    </div>
   </q-page>
 </template>
 
 <script>
 import { defineComponent } from 'vue'
+import LineChart from 'src/components/LineChart.vue'
+import DonutChart from 'src/components/DonutChart.vue'
 
 export default defineComponent({
-  name: 'IndexPage'
+    name: "IndexPage",
+    components: { LineChart, DonutChart }
 })
 </script>
