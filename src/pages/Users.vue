@@ -165,9 +165,9 @@
           </div> -->
 
           <div class="q-mb-md">
-            <q-input class="q-px-xs" dense color="dark" v-model="nameForm" label="Nom et Prénoms">
+            <q-input class="q-px-xs" dense color="dark" v-model="nameForm" label="Nom et Prénoms *">
             </q-input>
-            <q-input class="q-px-xs" dense color="dark" v-model="usernameForm" label="Nom d'utilisateur">
+            <q-input class="q-px-xs" dense color="dark" v-model="usernameForm" label="Nom d'utilisateur *">
             </q-input>
           </div>
 
@@ -175,7 +175,7 @@
 
           <div class="row ">
             <div class="col-6 q-gutter-y-sm">
-              <q-input class="q-px-xs" dense color="dark" v-model="phoneForm" label="Téléphone">
+              <q-input class="q-px-xs" dense color="dark" v-model="phoneForm" label="Téléphone *">
                 <template v-slot:prepend>
                   <q-icon name="phone" />
                 </template>

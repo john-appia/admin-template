@@ -14,33 +14,53 @@
           </router-link>
         </q-toolbar-title>
 
-         <q-btn-dropdown
-          class=""
-          color="white"
-          label="username"
-          no-caps
-          flat
-        >
-          <q-list dense>
-            <q-item clickable v-close-popup>
-              <q-item-section avatar>
-                <q-icon name="settings" />
-              </q-item-section>
-              <q-item-section>
-                <q-item-label>profile</q-item-label>
-              </q-item-section>
-            </q-item>
+        <q-btn class="q-mr-md" color="white" no-caps flat icon="translate" label="langues">
+          <q-menu>
+            <q-list style="min-width: 100px">
+              <q-item clickable v-close-popup>
+                <q-item-section avatar>
+                  <img style="height: 48px; width: 48px" src="https://flagcdn.com/w320/fr.png">
+                </q-item-section>
+                <q-item-section>
+                  <q-item-label>Français</q-item-label>
+                </q-item-section>
+              </q-item>
+              
+              <q-item clickable v-close-popup >
+                <q-item-section avatar>
+                  <img style="height: 48px; width: 48px" src="https://flagcdn.com/w320/gb.png">
+                </q-item-section>
+                <q-item-section>
+                  <q-item-label>Anglais</q-item-label>
+                </q-item-section>
+              </q-item>
+            </q-list>
+          </q-menu>
+        </q-btn>
 
-            <q-item clickable v-close-popup >
-              <q-item-section avatar>
-                <q-icon color="negative" name="power_settings_new" />
-              </q-item-section>
-              <q-item-section>
-                <q-item-label>deconnexion</q-item-label>
-              </q-item-section>
-            </q-item>
-          </q-list>
-        </q-btn-dropdown>
+        <q-btn color="white" no-caps flat label="Username">
+          <q-menu>
+            <q-list style="min-width: 100px">
+              <q-item clickable v-close-popup>
+                <q-item-section avatar>
+                  <q-icon name="settings" />
+                </q-item-section>
+                <q-item-section>
+                  <q-item-label>profile</q-item-label>
+                </q-item-section>
+              </q-item>
+              
+              <q-item clickable v-close-popup >
+                <q-item-section avatar>
+                  <q-icon color="negative" name="power_settings_new" />
+                </q-item-section>
+                <q-item-section>
+                  <q-item-label>deconnexion</q-item-label>
+                </q-item-section>
+              </q-item>
+            </q-list>
+          </q-menu>
+        </q-btn>
       </q-toolbar>
     </q-header>
 
@@ -48,7 +68,7 @@
       v-model="leftDrawerOpen" 
       show-if-above
       bordered
-      :width="200"
+      :width="300"
       :breakpoint="500"
       class="bg-grey-3"
     >
@@ -80,6 +100,30 @@
               posts
             </q-item-section>
           </q-item>
+
+          <q-expansion-item
+            expand-separator
+            icon="settings"
+            label="Paramètres"
+          >
+            <q-item class="q-ml-lg" to="#" clickable v-ripple>
+              <q-item-section avatar>
+                <q-icon name="groups" />
+              </q-item-section>
+              <q-item-section class="text-capitalize">
+                sous-menu 1
+              </q-item-section>
+            </q-item>
+
+            <q-item class="q-ml-lg" to="#" clickable v-ripple>
+              <q-item-section avatar>
+                <q-icon name="post_add" />
+              </q-item-section>
+              <q-item-section class="text-capitalize">
+                sous-menu 2
+              </q-item-section>
+            </q-item>
+          </q-expansion-item>
 
           <!-- <q-item :to="{ name: 'admins' }" clickable v-ripple>
             <q-item-section avatar>

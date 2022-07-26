@@ -86,7 +86,7 @@ module.exports = configure(function (ctx) {
       server: {
         type: 'http'
       },
-      port: 8080,
+      port: 8081,
       open: false // opens browser window automatically
     },
 
@@ -110,7 +110,7 @@ module.exports = configure(function (ctx) {
 
     // animations: 'all', // --- includes all animations
     // https://quasar.dev/options/animations
-    animations: [],
+    animations: 'all',
 
     // https://v2.quasar.dev/quasar-cli-webpack/developing-ssr/configuring-ssr
     ssr: {

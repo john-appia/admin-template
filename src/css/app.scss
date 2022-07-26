@@ -5,7 +5,47 @@
 
 // my css
 
+.my-anime{
+    animation-duration: 1.5s;
+}
+
 .my-link{
     text-decoration: none;
     color: currentColor;
+}
+
+.loginBg{
+    background-color: #1976d223;
+
+}
+
+.bule1{
+    width: 150px;
+    height: 150px;
+    border-radius: 100px;
+    background-color: $primary;
+    position: absolute;
+    top: 35%;
+    left: 20%;
+}
+
+.bule2{
+    width: 150px;
+    height: 150px;
+    border-radius: 100px;
+    background-color: silver;
+    position: absolute;
+    top: 15%;
+    left: 70%;
+}
+
+.bule3{
+    width: 150px;
+    height: 150px;
+    border-radius: 100px;
+    background-color: tomato;
+}
+
+.my-card{
+    z-index: 10;
 }
