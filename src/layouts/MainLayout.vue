@@ -10,7 +10,7 @@
             <q-avatar>
               <img src="https://cdn.quasar.dev/logo-v2/svg/logo-mono-white.svg">
             </q-avatar>
-            My Dashbord
+            IsyMairie
           </router-link>
         </q-toolbar-title>
 
@@ -83,7 +83,7 @@
             </q-item-section>
           </q-item>
 
-          <q-item :to="{ name: 'users' }" clickable v-ripple>
+          <!-- <q-item :to="{ name: 'users' }" clickable v-ripple>
             <q-item-section avatar>
               <q-icon name="groups" />
             </q-item-section>
@@ -99,28 +99,55 @@
             <q-item-section class="text-capitalize">
               posts
             </q-item-section>
-          </q-item>
+          </q-item> -->
 
           <q-expansion-item
             expand-separator
             icon="settings"
             label="Paramètres"
           >
-            <q-item class="q-ml-lg" to="#" clickable v-ripple>
+            <q-item class="q-ml-lg" :to="{ name: 'typeCommerces' }" clickable v-ripple>
               <q-item-section avatar>
-                <q-icon name="groups" />
+                <q-icon name="settings_applications" />
               </q-item-section>
               <q-item-section class="text-capitalize">
-                sous-menu 1
+                type de commerces
               </q-item-section>
             </q-item>
 
-            <q-item class="q-ml-lg" to="#" clickable v-ripple>
+            <q-item class="q-ml-lg" :to="{ name: 'typeAdministrations' }" clickable v-ripple>
               <q-item-section avatar>
-                <q-icon name="post_add" />
+                <q-icon name="settings_applications" />
               </q-item-section>
               <q-item-section class="text-capitalize">
-                sous-menu 2
+                type administrations
+              </q-item-section>
+            </q-item>
+
+            <q-item class="q-ml-lg" :to="{ name: 'statutDemandes' }" clickable v-ripple>
+              <q-item-section avatar>
+                <q-icon name="settings_applications" />
+              </q-item-section>
+              <q-item-section class="text-capitalize">
+                statut de demandes
+              </q-item-section>
+            </q-item>
+
+            <q-item class="q-ml-lg" :to="{ name: 'statutIncidents' }" clickable v-ripple>
+              <q-item-section avatar>
+                <q-icon name="settings_applications" />
+              </q-item-section>
+              <q-item-section class="text-capitalize">
+                statut incidents
+              </q-item-section>
+            </q-item>
+
+            <q-item class="q-ml-lg" :to="{ name: 'secteurActivites' }" clickable v-ripple>
+              <q-item-section avatar>
+                <q-icon name="settings_applications" />
+              </q-item-section>
+              <q-item-section class="text-capitalize">
+                secteur d'activités
               </q-item-section>
             </q-item>
           </q-expansion-item>
@@ -146,11 +173,17 @@
 </template>
 
 <script>
-import { ref } from 'vue'
+import { onBeforeMount ,ref } from 'vue'
+import { useQuasar } from "quasar";
 
 export default {
   setup () {
     const leftDrawerOpen = ref(true)
+    const $q = useQuasar()
+
+    onBeforeMount(() => {
+      console.log($q.localStorage.getItem('adminIsyMairieToken'))
+    })
 
     return {
       leftDrawerOpen,

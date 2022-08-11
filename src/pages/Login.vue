@@ -19,11 +19,10 @@
         </q-card-section>
         <q-card-section>
           <q-form
-            @submit="onSubmit"
-            @reset="onReset"
+            @submit="login"
             class="q-gutter-md"
           >
-            <q-input color="" v-model="text" label="Login">
+            <q-input color="" v-model="username" label="Login">
               <template v-slot:prepend>
                 <q-icon name="person" />
               </template>
@@ -55,15 +54,49 @@
 
 <script>
 import { ref } from 'vue'
+import { useAdminStore } from "../stores/admin-store";
+import { useQuasar } from "quasar";
+import { useRouter } from "vue-router";
 
 export default {
   name: 'LoginPage',
 
   setup(){
     const isPwd = ref(true)
+    const username = ref('')
+    const password = ref('')
+    const rememberMe = ref(false)
+    const adminStore = useAdminStore()
+    const $q = useQuasar()
+    const router = useRouter()
+
+    const login = () => {
+      const admin = {
+        username: username.value,
+        password: password.value,
+        rememberMe: rememberMe.value,
+      }
+
+      adminStore.login(admin)
+      .then(data => {
+        console.log('ok')
+        router.push({ name: 'home' })
+      })
+      .catch(error => {
+        $q.notify({
+          type: 'negative',
+          message: 'Information incorrect',
+        })
+      })
+    }
 
     return{
-      isPwd
+      isPwd,
+      username,
+      password,
+      rememberMe,
+
+      login,
     }
   }
 }

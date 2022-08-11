@@ -16,6 +16,11 @@ const { configure } = require('quasar/wrappers');
 
 module.exports = configure(function (ctx) {
   return {
+
+    htmlVariables: {
+      title: 'Back-office - IsyMairie',
+    },
+
     // https://v2.quasar.dev/quasar-cli-webpack/supporting-ts
     supportTS: false,
 
@@ -86,7 +91,7 @@ module.exports = configure(function (ctx) {
       server: {
         type: 'http'
       },
-      port: 8081,
+      port: 8080,
       open: false // opens browser window automatically
     },
 
@@ -105,7 +110,7 @@ module.exports = configure(function (ctx) {
       // directives: [],
 
       // Quasar plugins
-      plugins: ['Notify']
+      plugins: ['Notify', 'LocalStorage']
     },
 
     // animations: 'all', // --- includes all animations
